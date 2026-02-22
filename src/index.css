@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 152 69% 48%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 82%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 52%;
+
+    --accent: 220 16% 18%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 152 69% 48%;
+
+    --radius: 0.5rem;
+
+    --buy: 152 69% 48%;
+    --buy-foreground: 220 20% 7%;
+    --sell: 0 72% 55%;
+    --sell-foreground: 210 40% 98%;
+    --hold: 38 92% 55%;
+    --hold-foreground: 220 20% 7%;
+
+    --chart-up: 152 69% 48%;
+    --chart-down: 0 72% 55%;
+    --chart-neutral: 215 15% 52%;
+
+    --glow-green: 0 0% 0% / 0;
+    --glow-red: 0 0% 0% / 0;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 82%;
+    --sidebar-primary: 152 69% 48%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 152 69% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .signal-buy {
+    @apply bg-buy/10 text-buy border-buy/30;
+  }
+  .signal-sell {
+    @apply bg-sell/10 text-sell border-sell/30;
+  }
+  .signal-hold {
+    @apply bg-hold/10 text-hold border-hold/30;
+  }
+  .glow-buy {
+    box-shadow: 0 0 20px hsl(152 69% 48% / 0.15), 0 0 40px hsl(152 69% 48% / 0.05);
+  }
+  .glow-sell {
+    box-shadow: 0 0 20px hsl(0 72% 55% / 0.15), 0 0 40px hsl(0 72% 55% / 0.05);
+  }
+  .glow-hold {
+    box-shadow: 0 0 20px hsl(38 92% 55% / 0.15), 0 0 40px hsl(38 92% 55% / 0.05);
+  }
+  .ticker-pulse {
+    animation: tickerPulse 2s ease-in-out infinite;
+  }
+  @keyframes tickerPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+}
